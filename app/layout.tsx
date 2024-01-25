@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Black_Ops_One} from "next/font/google"
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const BOO = Black_Ops_One({
+  subsets: ['latin'],
+  weight: ['400']
+
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={BOO.className}>
         <Header />
         {children}
         <Footer />

@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         title: "Genéral",
-        description: "Principal canal de discussion pour tout ce qui concerne GodsChess",
+        description: "Principal canal de discussion pour tout ce qui concerne GodsChess.",
     },
 
     {
@@ -26,7 +26,7 @@ export default [
     {
         id: 5,
         title: "Autre",
-        description: "Tous ce qui ne va pas aux autres topics.",
+        description: "Tous ce qui ne va pas dans les autres canaux.",
     },
 
 ]
