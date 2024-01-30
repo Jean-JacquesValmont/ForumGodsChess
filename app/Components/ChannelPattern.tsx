@@ -1,17 +1,46 @@
-import React from 'react'
+"use client"
+
+import React, { useState, useEffect } from 'react'
 import RowThreads from './RowThreads'
-import data from "../../app/dataTest2"
+// import data from "../../app/dataTest2"
+import { supabase } from '../API/supabase';
 
 const ChannelPattern = () => {
+    
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const cardsTitle = data.map(item => {
-        return (
-            <RowThreads
-                key={item.id}
-                item={item}
-            />
-        )
-      })
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data, error } = await supabase.from('generalchannel').select('*');
+
+        if (error) {
+          console.error(error);
+        } else {
+          console.log('Données de la table :', data);
+          setData(data || []); // Si data est null, définissez-le sur un tableau vide
+        }
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error.message);
+      } finally {
+        setLoading(false); // Définir le chargement sur false, que l'opération réussisse ou échoue
+      }
+    }
+
+    fetchData();
+  }, []); // Le tableau vide en tant que deuxième argument signifie que useEffect s'exécute une seule fois après le montage du composant
+
+  if (loading) {
+    return <p>Chargement en cours...</p>;
+  }
+
+  const rowThread = data.map(item => (
+    <RowThreads
+      key={item.id}
+      item={item}
+    />
+  ));
       
   return (
     <div>
@@ -36,7 +65,7 @@ const ChannelPattern = () => {
                     </div>
                 </div>
             </div>
-            {cardsTitle}
+            {rowThread}
         </div>
     </div>
   )

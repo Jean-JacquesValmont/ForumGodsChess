@@ -10,17 +10,17 @@ const RowThreads = (props : any) => {
                 <Image src={props.item.image} alt='' width={100} height={50}/>
                 <div className='p-2'>
                     <h4>{props.item.title}</h4>
-                    <p>Lancer par {props.item.user} il y a 3 jours</p>
+                    <p>Lancer par {props.item.user} le {props.item.created_at}</p>
                 </div>
             </div>
             <div className='flex'>
                 <div className='flex flex-col p-2'>
-                    <p>User2</p>
+                    <p>{props.item.lastPost}</p>
                     <p>il y a 2 jours</p>
                 </div>
                 <div className='flex flex-col p-2'>
-                    <p>Réponse: 2</p>
-                    <p>Vues: 5</p>
+                    <p>Réponse: {props.item.answer}</p>
+                    <p>Vues: {props.item.view}</p>
                 </div>
             </div>
         </div>

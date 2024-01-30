@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ChannelPattern from '../Components/ChannelPattern'
 
 const General = () => {
+
   return (
     <div>
         <ChannelPattern />
