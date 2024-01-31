@@ -15,7 +15,7 @@ const Header = () => {
                 <Link href="/Connection">
                     <p className='p-4'>Connexion</p>
                 </Link>
-                <Link href="/inscription">
+                <Link href="/Inscription">
                     <p>Inscription</p>
                 </Link>
             </div>

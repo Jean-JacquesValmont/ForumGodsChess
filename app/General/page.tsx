@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ChannelPattern from '../Components/ChannelPattern'
 
 const General = () => {
