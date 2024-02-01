@@ -12,7 +12,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className='flex items-center p-2'>
-                <Link href="/Connection">
+                <Link href="/Login">
                     <p className='p-4'>Connexion</p>
                 </Link>
                 <Link href="/Inscription">
